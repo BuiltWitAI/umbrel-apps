@@ -8,7 +8,5 @@ services:
       PROXY_AUTH_ADD: "false"
 
   stockfish-chess:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/builtwitai/bwtai-stockfish-chess:latest
     restart: on-failure
