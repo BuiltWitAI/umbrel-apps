@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+
+  app_proxy:
+    environment:
+      APP_HOST: cloud-torrent
+      APP_PORT: 3000
+      PROXY_AUTH_ADD: "false"
+
+  cloud-torrent:
+    image: jpillora/cloud-torrent:latest
+    restart: on-failure
+    environment:
+      - PORT=3000
+    volumes:
+      - ${APP_DATA_DIR}/data/downloads:/downloads
+    healthcheck:
+      test: ["CMD", "wget", "-qO", "/dev/null", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3

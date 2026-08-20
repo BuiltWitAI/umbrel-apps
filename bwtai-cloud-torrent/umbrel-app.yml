@@ -1,0 +1,37 @@
+manifestVersion: 1
+id: bwtai-cloud-torrent
+name: Cloud Torrent
+tagline: Self-hosted remote torrent client with web UI
+category: networking
+version: "1.0.0"
+port: 3000
+icon: https://raw.githubusercontent.com/jpillora/cloud-torrent/master/img/icon.png
+description: |
+  Cloud Torrent is a self-hosted remote torrent client written in Go. You can add torrents via a web interface, and they are downloaded to your server's disk. The downloaded files are then retrievable or streamable via HTTP.
+
+  Features:
+  - Single binary, low memory usage
+  - Web interface to add torrents via URL, magnet, or file upload
+  - Real-time updates of torrent progress
+  - Built-in torrent search
+  - Mobile-friendly interface
+  - HTTP content server to stream or download completed files
+  - Optional basic auth
+  - Docker image available
+
+  The container stores downloaded files in /downloads, which should be mapped to a persistent volume.
+
+developer: jpillora
+website: https://github.com/jpillora/cloud-torrent
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
+repo: https://github.com/jpillora/cloud-torrent
+support: https://github.com/jpillora/cloud-torrent/issues
+gallery:
+  - https://raw.githubusercontent.com/jpillora/cloud-torrent/master/img/screenshot.png
+releaseNotes: |
+  Initial release of Cloud Torrent for Umbrel.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
