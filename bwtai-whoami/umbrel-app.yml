@@ -4,7 +4,7 @@ name: Whoami
 tagline: Tiny Go HTTP server that prints OS/hostname info
 category: utilities
 version: "1.0.0"
-port: 80
+port: 8081
 icon: https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo.png
 description: |
   Whoami is a tiny Go HTTP server that returns information about the request: IP address, hostname, headers, environment variables, and more.
