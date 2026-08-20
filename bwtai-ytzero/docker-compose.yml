@@ -6,6 +6,8 @@ services:
     environment:
       APP_HOST: ytzero
       APP_PORT: 3001
+      # Port INTERNE reste 3001 (port du container)
+      # Le port 8190 est le port EXPOSÉ dans le manifest Umbrel
       PROXY_AUTH_ADD: "false"
 
   ytzero:

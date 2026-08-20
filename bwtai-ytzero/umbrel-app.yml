@@ -4,7 +4,7 @@ name: YT Zero
 tagline: Self-hosted YouTube inbox — subscriptions without recommendations
 category: media
 version: "2026.08.1"
-port: 3001
+port: 8190
 icon: https://raw.githubusercontent.com/Pelski/ytzero/main/docs/assets/icon.png
 description: |
   YT Zero turns YouTube into a simple, private reader for channels you chose on purpose. No Google account, no API key, no algorithmic feed.
