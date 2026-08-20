@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess vs Bot</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 24px;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.8rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+        #board-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        #board {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .controls {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #374151;
+        }
+        .btn-secondary:hover { background: #d1d5db; }
+        .btn-danger {
+            background: #ef4444;
+            color: white;
+        }
+        .btn-danger:hover { background: #dc2626; }
+        .status {
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .status-white { background: #dbeafe; color: #1e40af; }
+        .status-black { background: #fef3c7; color: #92400e; }
+        .status-checkmate { background: #fee2e2; color: #991b1b; }
+        .status-draw { background: #f3f4f6; color: #374151; }
+        .difficulty-select {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+            color: #374151;
+        }
+        select {
+            padding: 8px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            background: white;
+        }
+        .move-history {
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 16px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.8rem;
+        }
+        .move-history h3 {
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: #374151;
+        }
+        .move-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 12px;
+        }
+        .move-number {
+            color: #9ca3af;
+        }
+        .move-white { color: #1f2937; }
+        .move-black { color: #4b5563; }
+        @media (max-width: 500px) {
+            .container { padding: 16px; }
+            h1 { font-size: 1.5rem; }
+            button { padding: 8px 16px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>♟ Chess vs Bot</h1>
+        <p class="subtitle">Play against a simple AI opponent</p>
+        
+        <div class="difficulty-select">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty" onchange="setDifficulty(this.value)">
+                <option value="1">Easy (Random)</option>
+                <option value="2" selected>Medium (Minimax depth 2)</option>
+                <option value="3">Hard (Minimax depth 3)</option>
+            </select>
+        </div>
+        
+        <div id="board-container">
+            <div id="board"></div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn-primary" onclick="newGame()">New Game</button>
+            <button class="btn-secondary" onclick="undoMove()">Undo</button>
+            <button class="btn-danger" onclick="flipBoard()">Flip Board</button>
+        </div>
+        
+        <div id="status" class="status status-white">White to move</div>
+        
+        <div class="move-history">
+            <h3>Move History</h3>
+            <div id="move-list" class="move-list"></div>
+        </div>
+    </div>
+
+    <!-- Load libraries from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chess.js@1.4.0/dist/chess.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+    
+    <script>
+        // Game state
+        let board = null;
+        let game = new Chess();
+        let difficulty = 2;
+        let orientation = 'white';
+
+        // Piece values for evaluation
+        const PIECE_VALUES = {
+            p: 100, n: 320, b: 330, r: 500, q: 900, k: 20000
+        };
+
+        // Position tables for basic evaluation (simplified)
+        const PAWN_TABLE = [
+            0,  0,  0,  0,  0,  0,  0,  0,
+            50, 50, 50, 50, 50, 50, 50, 50,
+            10, 10, 20, 30, 30, 20, 10, 10,
+            5,  5, 10, 25, 25, 10,  5,  5,
+            0,  0,  0, 20, 20,  0,  0,  0,
+            5, -5,-10,  0,  0,-10, -5,  5,
+            5, 10, 10,-20,-20, 10, 10,  5,
+            0,  0,  0,  0,  0,  0,  0,  0
+        ];
+
+        const KNIGHT_TABLE = [
+            -50,-40,-30,-30,-30,-30,-40,-50,
+            -40,-20,  0,  0,  0,  0,-20,-40,
+            -30,  0, 10, 15, 15, 10,  0,-30,
+            -30,  5, 15, 20, 20, 15,  5,-30,
+            -30,  0, 15, 20, 20, 15,  0,-30,
+            -30,  5, 10, 15, 15, 10,  5,-30,
+            -40,-20,  0,  5,  5,  0,-20,-40,
+            -50,-40,-30,-30,-30,-30,-40,-50
+        ];
+
+        const BISHOP_TABLE = [
+            -20,-10,-10,-10,-10,-10,-10,-20,
+            -10,  0,  0,  0,  0,  0,  0,-10,
+            -10,  0,  5, 10, 10,  5,  0,-10,
+            -10,  5,  5, 10, 10,  5,  5,-10,
+            -10,  0, 10, 10, 10, 10,  0,-10,
+            -10, 10, 10, 10, 10, 10, 10,-10,
+            -10,  5,  0,  0,  0,  0,  5,-10,
+            -20,-10,-10,-10,-10,-10,-10,-20
+        ];
+
+        const ROOK_TABLE = [
+            0,  0,  0,  0,  0,  0,  0,  0,
+            5, 10, 10, 10, 10, 10, 10,  5,
+            -5,  0,  0,  0,  0,  0,  0, -5,
+            -5,  0,  0,  0,  0,  0,  0, -5,
+            -5,  0,  0,  0,  0,  0,  0, -5,
+            -5,  0,  0,  0,  0,  0,  0, -5,
+            -5,  0,  0,  0,  0,  0,  0, -5,
+            0,  0,  0,  5,  5,  0,  0,  0
+        ];
+
+        const QUEEN_TABLE = [
+            -20,-10,-10, -5, -5,-10,-10,-20,
+            -10,  0,  0,  0,  0,  0,  0,-10,
+            -10,  0,  5,  5,  5,  5,  0,-10,
+            -5,  0,  5,  5,  5,  5,  0, -5,
+            0,  0,  5,  5,  5,  5,  0, -5,
+            -10,  5,  5,  5,  5,  5,  0,-10,
+            -10,  0,  5,  0,  0,  0,  0,-10,
+            -20,-10,-10, -5, -5,-10,-10,-20
+        ];
+
+        const KING_TABLE = [
+            -30,-40,-40,-50,-50,-40,-40,-30,
+            -30,-40,-40,-50,-50,-40,-40,-30,
+            -30,-40,-40,-50,-50,-40,-40,-30,
+            -30,-40,-40,-50,-50,-40,-40,-30,
+            -20,-30,-30,-40,-40,-30,-30,-20,
+            -10,-20,-20,-20,-20,-20,-20,-10,
+            20, 20,  0,  0,  0,  0, 20, 20,
+            20, 30, 10,  0,  0, 10, 30, 20
+        ];
+
+        const PIECE_TABLES = {
+            p: PAWN_TABLE,
+            n: KNIGHT_TABLE,
+            b: BISHOP_TABLE,
+            r: ROOK_TABLE,
+            q: QUEEN_TABLE,
+            k: KING_TABLE
+        };
+
+        function squareToIndex(square) {
+            const file = square.charCodeAt(0) - 97;
+            const rank = 8 - parseInt(square[1]);
+            return rank * 8 + file;
+        }
+
+        function evaluateBoard(game) {
+            const board = game.board();
+            let score = 0;
+            
+            for (let rank = 0; rank < 8; rank++) {
+                for (let file = 0; file < 8; file++) {
+                    const piece = board[rank][file];
+                    if (!piece) continue;
+                    
+                    const pieceType = piece.type;
+                    const color = piece.color;
+                    const value = PIECE_VALUES[pieceType];
+                    const table = PIECE_TABLES[pieceType];
+                    const index = rank * 8 + file;
+                    const tableValue = table[index] || 0;
+                    
+                    if (color === 'w') {
+                        score += value + tableValue;
+                    } else {
+                        score -= value + tableValue;
+                    }
+                }
+            }
+            
+            // Check for checkmate/stalemate
+            if (game.isCheckmate()) {
+                return game.turn() === 'w' ? -99999 : 99999;
+            }
+            if (game.isDraw() || game.isStalemate() || game.isThreefoldRepetition()) {
+                return 0;
+            }
+            
+            return score;
+        }
+
+        function minimax(game, depth, alpha, beta, maximizingPlayer) {
+            if (depth === 0 || game.isGameOver()) {
+                return evaluateBoard(game);
+            }
+            
+            const moves = game.moves({ verbose: true });
+            
+            // Simple move ordering: captures first
+            moves.sort((a, b) => (b.captured ? 1 : 0) - (a.captured ? 1 : 0));
+            
+            if (maximizingPlayer) {
+                let maxEval = -Infinity;
+                for (const move of moves) {
+                    game.move(move);
+                    const evalScore = minimax(game, depth - 1, alpha, beta, false);
+                    game.undo();
+                    maxEval = Math.max(maxEval, evalScore);
+                    alpha = Math.max(alpha, evalScore);
+                    if (beta <= alpha) break;
+                }
+                return maxEval;
+            } else {
+                let minEval = Infinity;
+                for (const move of moves) {
+                    game.move(move);
+                    const evalScore = minimax(game, depth - 1, alpha, beta, true);
+                    game.undo();
+                    minEval = Math.min(minEval, evalScore);
+                    beta = Math.min(beta, evalScore);
+                    if (beta <= alpha) break;
+                }
+                return minEval;
+            }
+        }
+
+        function getBestMove(game, depth) {
+            const moves = game.moves({ verbose: true });
+            if (moves.length === 0) return null;
+            
+            // Shuffle for variety at same evaluation
+            for (let i = moves.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [moves[i], moves[j]] = [moves[j], moves[i]];
+            }
+            
+            moves.sort((a, b) => (b.captured ? 1 : 0) - (a.captured ? 1 : 0));
+            
+            let bestMove = moves[0];
+            let bestValue = -Infinity;
+            
+            for (const move of moves) {
+                game.move(move);
+                const value = -minimax(game, depth - 1, -Infinity, Infinity, false);
+                game.undo();
+                
+                if (value > bestValue) {
+                    bestValue = value;
+                    bestMove = move;
+                }
+            }
+            
+            return bestMove;
+        }
+
+        function makeAIMove() {
+            if (game.game_over()) return;
+            
+            if (difficulty === 1) {
+                // Random move
+                const moves = game.moves();
+                const move = moves[Math.floor(Math.random() * moves.length)];
+                game.move(move);
+            } else {
+                // Minimax with alpha-beta pruning
+                const bestMove = getBestMove(game, difficulty);
+                if (bestMove) {
+                    game.move(bestMove);
+                }
+            }
+            
+            updateBoard();
+            updateStatus();
+            updateMoveHistory();
+        }
+
+        function onDragStart(source, piece, position, orientation) {
+            if (game.game_over()) return false;
+            if ((game.turn() === 'w' && piece.search(/^b/) !== -1) ||
+                (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
+                return false;
+            }
+        }
+
+        function onDrop(source, target) {
+            const move = game.move({
+                from: source,
+                to: target,
+                promotion: 'q'
+            });
+            
+            if (move === null) return 'snapback';
+            
+            updateMoveHistory();
+            updateStatus();
+            
+            // AI moves after a short delay
+            if (!game.game_over()) {
+                window.setTimeout(makeAIMove, 300);
+            }
+        }
+
+        function onSnapEnd() {
+            board.position(game.fen());
+        }
+
+        function updateBoard() {
+            board.position(game.fen());
+        }
+
+        function updateStatus() {
+            const statusEl = document.getElementById('status');
+            statusEl.className = 'status';
+            
+            if (game.isCheckmate()) {
+                statusEl.textContent = `Checkmate! ${game.turn() === 'w' ? 'Black' : 'White'} wins!`;
+                statusEl.classList.add('status-checkmate');
+            } else if (game.isDraw() || game.isStalemate() || game.isThreefoldRepetition()) {
+                statusEl.textContent = 'Draw';
+                statusEl.classList.add('status-draw');
+            } else {
+                const turn = game.turn() === 'w' ? 'White' : 'Black';
+                statusEl.textContent = `${turn} to move${game.in_check() ? ' (Check)' : ''}`;
+                statusEl.classList.add(game.turn() === 'w' ? 'status-white' : 'status-black');
+            }
+        }
+
+        function updateMoveHistory() {
+            const history = game.history({ verbose: true });
+            const moveList = document.getElementById('move-list');
+            moveList.innerHTML = '';
+            
+            for (let i = 0; i < history.length; i += 2) {
+                const moveNum = Math.floor(i / 2) + 1;
+                const whiteMove = history[i];
+                const blackMove = history[i + 1];
+                
+                const numSpan = document.createElement('span');
+                numSpan.className = 'move-number';
+                numSpan.textContent = `${moveNum}. `;
+                moveList.appendChild(numSpan);
+                
+                const whiteSpan = document.createElement('span');
+                whiteSpan.className = 'move-white';
+                whiteSpan.textContent = whiteMove.san + ' ';
+                moveList.appendChild(whiteSpan);
+                
+                if (blackMove) {
+                    const blackSpan = document.createElement('span');
+                    blackSpan.className = 'move-black';
+                    blackSpan.textContent = blackMove.san + ' ';
+                    moveList.appendChild(blackSpan);
+                }
+            }
+            moveList.scrollTop = moveList.scrollHeight;
+        }
+
+        function newGame() {
+            game.reset();
+            board.start();
+            updateStatus();
+            updateMoveHistory();
+        }
+
+        function undoMove() {
+            game.undo();
+            game.undo(); // Undo both player and AI move
+            updateBoard();
+            updateStatus();
+            updateMoveHistory();
+        }
+
+        function flipBoard() {
+            orientation = orientation === 'white' ? 'black' : 'white';
+            board.orientation(orientation);
+        }
+
+        function setDifficulty(value) {
+            difficulty = parseInt(value);
+        }
+
+        // Initialize board
+        const config = {
+            draggable: true,
+            position: 'start',
+            onDragStart: onDragStart,
+            onDrop: onDrop,
+            onSnapEnd: onSnapEnd,
+            pieceTheme: 'https://cdn.jsdelivr.net/npm/@chrisoakman/chessboardjs@1.0.0/dist/img/chesspieces/wikipedia/{piece}.png'
+        };
+        
+        board = Chessboard('board', config);
+        updateStatus();
+    </script>
+</body>
+</html>
