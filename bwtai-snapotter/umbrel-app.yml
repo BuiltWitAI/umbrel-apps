@@ -1,8 +1,7 @@
-manifestVersion: 1
+manifestVersion: 1.1
 id: bwtai-snapotter
 name: SnapOtter
 tagline: Self-hosted file processing platform with 200+ tools
-icon: https://raw.githubusercontent.com/snapotter-hq/snapotter/main/apps/docs/public/logo.png
 category: Utilities
 version: "2.2.0"
 port: 1349

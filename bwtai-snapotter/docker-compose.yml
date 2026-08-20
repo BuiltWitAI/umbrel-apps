@@ -7,10 +7,10 @@ services:
       # The format here is: <app-id>_<docker-service-name>_1
       APP_HOST: bwtai-snapotter_snapotter_1
       APP_PORT: 1349
+      PROXY_AUTH_ADD: "false"
 
   snapotter:
-    image: snapotter/snapotter:latest
-    container_name: bwtai-snapotter
+    image: snapotter/snapotter:v2.2.0
     user: "1000:1000"
     init: true
     environment:
@@ -29,17 +29,17 @@ services:
       - MAX_USERS=0
       - SESSION_DURATION_HOURS=168
       - TRUST_PROXY=loopback,linklocal,uniquelocal
-      - DATABASE_URL=postgres://snapotter:${POSTGRES_PASSWORD}@postgres:5432/snapotter
-      - REDIS_URL=redis://:${REDIS_PASSWORD}@redis:6379
+      - DATABASE_URL=postgres://snapotter:moneyprintergobrrr@bwtai-snapotter_postgres_1:5432/snapotter
+      - REDIS_URL=redis://:moneyprintergobrrr@bwtai-snapotter_redis_1:6379
     volumes:
-      - snapotter-data:/data
-      - snapotter-workspace:/tmp/workspace
+      - ${APP_DATA_DIR}/data/snapotter:/data
+      - ${APP_DATA_DIR}/data/workspace:/tmp/workspace
     depends_on:
       postgres:
         condition: service_healthy
       redis:
         condition: service_healthy
-    restart: unless-stopped
+    restart: on-failure
     mem_limit: 6g
     memswap_limit: 6g
     cpus: 4
@@ -70,14 +70,14 @@ services:
 
   postgres:
     image: postgres:17-alpine@sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193
-    container_name: bwtai-snapotter-postgres
+    user: "1000:1000"
     environment:
       POSTGRES_USER: snapotter
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_PASSWORD: moneyprintergobrrr
       POSTGRES_DB: snapotter
     volumes:
-      - snapotter-pgdata:/var/lib/postgresql/data
-    restart: unless-stopped
+      - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
+    restart: on-failure
     mem_limit: 1g
     memswap_limit: 1g
     cpus: 2
@@ -101,16 +101,16 @@ services:
 
   redis:
     image: redis:8-alpine@sha256:9d317178eceac8454a2284a9e6df2466b93c745529947f0cd42a0fa9609d7005
-    container_name: bwtai-snapotter-redis
+    user: "1000:1000"
     command: >-
       redis-server
       --maxmemory-policy noeviction
       --maxmemory 512mb
       --appendonly yes
-      --requirepass ${REDIS_PASSWORD}
+      --requirepass moneyprintergobrrr
     volumes:
-      - snapotter-redisdata:/data
-    restart: unless-stopped
+      - ${APP_DATA_DIR}/data/redis:/data
+    restart: on-failure
     mem_limit: 1g
     memswap_limit: 1g
     cpus: 2
@@ -126,14 +126,8 @@ services:
     security_opt:
       - no-new-privileges:true
     healthcheck:
-      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "--no-auth-warning", "ping"]
+      test: ["CMD", "redis-cli", "-a", "moneyprintergobrrr", "--no-auth-warning", "ping"]
       interval: 10s
       timeout: 5s
       retries: 12
       start_period: 10s
-
-volumes:
-  snapotter-data:
-  snapotter-workspace:
-  snapotter-pgdata:
-  snapotter-redisdata:
