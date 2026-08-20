@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: cyberchef
+      APP_PORT: 8080
+      PROXY_AUTH_ADD: "false"
+
+  cyberchef:
+    image: ghcr.io/gchq/cyberchef:latest
+    restart: on-failure
