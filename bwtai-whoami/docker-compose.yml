@@ -11,9 +11,3 @@ services:
   whoami:
     image: traefik/whoami:latest
     restart: on-failure
-    healthcheck:
-      test: ["CMD", "wget", "-q", "--spider", "http://localhost:80"]
-      interval: 30s
-      timeout: 5s
-      start_period: 10s
-      retries: 3
