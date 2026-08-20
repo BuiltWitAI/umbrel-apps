@@ -1,0 +1,47 @@
+manifestVersion: 1
+id: bwtai-stockfish-chess
+name: Stockfish Chess
+tagline: Play against Stockfish 18 engine in your browser
+category: games
+version: "6.2.4"
+port: 8087
+icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-stockfish-chess/icon.png
+description: |
+  A modern, responsive web-based chess GUI powered by **Stockfish 18** - one of the strongest chess engines in the world.
+
+  **Game Modes:**
+  - **vs Stockfish**: Play against the engine with customizable strength (Skill Level 1-20)
+  - **Local PvP**: Two players on the same device (pass-and-play)
+  - **Side Swap**: Switch colors mid-game; engine takes over the other side
+  - **Analysis Mode**: Infinite analysis for post-game review with real-time evaluation
+
+  **Features:**
+  - **12 Board Themes**: Brown Wood, Red Wine, Green Forest, Blue Sky, and more
+  - **Piece Sets**: Standard and Staunty sets
+  - **Advanced Engine Settings**: Adjust Skill Level, Elo Rating, Fixed Depth (1-36), Thinking Time
+  - **Multi-threaded Analysis**: Uses all CPU cores via WebAssembly SharedArrayBuffer
+  - **Real-time Evaluation**: Top 2 Principal Variations displayed live
+  - **Visual Aids**: Best move hint, analysis arrows, board annotations (arrows/markers)
+  - **Persistent Settings**: Preferences saved in local storage
+  - **Opening Books**: Built-in opening book support
+
+  **Technical:**
+  - Runs entirely client-side - Stockfish 18 runs as WebAssembly in your browser
+  - Requires COOP/COEP headers for multi-threading (configured in nginx)
+  - No server-side compute - all engine processing happens locally
+
+developer: LabinatorSolutions
+website: https://boldchess.com/
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
+repo: https://github.com/LabinatorSolutions/stockfish-chess-web-gui
+support: https://github.com/LabinatorSolutions/stockfish-chess-web-gui/issues
+gallery:
+  - https://raw.githubusercontent.com/LabinatorSolutions/stockfish-chess-web-gui/master/assets/screenshot.png
+releaseNotes: |
+  Initial release of Stockfish Chess Web GUI for Umbrel.
+  Includes Stockfish 18 engine running as WebAssembly.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
