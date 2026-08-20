@@ -1,0 +1,37 @@
+manifestVersion: 1
+id: bwtai-life
+name: Conway's Game of Life
+tagline: Infinite field & Hashlife algorithm in your browser
+category: games
+version: "1.0.0"
+port: 8084
+icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-life/icon.png
+description: |
+  The definitive Conway's Game of Life implementation in your browser. Features an infinite field and the super-fast Hashlife algorithm.
+
+  Features:
+  - Infinite grid (no boundaries)
+  - Hashlife algorithm for massive patterns (millions of cells)
+  - Load/save patterns in RLE, Life 1.06, Plaintext formats
+  - Built-in pattern library (Caterpillar, Gemini, etc.)
+  - Adjustable rules (Conway, HighLife, 2x2, Replicator, custom)
+  - Keyboard and mouse controls
+  - Zoom, pan, step, run/pause, rewind
+  - Export/import patterns
+
+  Runs entirely client-side - no server computation needed.
+
+developer: copy.sh
+website: https://copy.sh/life/
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
+repo: https://github.com/copy/life
+support: https://github.com/copy/life/issues
+gallery:
+  - https://raw.githubusercontent.com/copy/life/master/pattern.gif
+releaseNotes: |
+  Initial release of Conway's Game of Life for Umbrel.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
