@@ -1,0 +1,52 @@
+manifestVersion: 1
+id: bwtai-nametag
+name: Nametag
+tagline: Personal Relationship Manager — remember people and how they're connected
+category: utilities
+version: "1.0.0"
+port: 3000
+icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-nametag/icon.png
+description: |
+  Nametag is a personal relationships manager that helps you remember the people in your life and how they're connected. Track birthdays, contact information, how people are connected, and visualize your network as an interactive graph.
+
+  Features:
+  - Track people with flexible attributes (name, birthday, important dates, photos, custom fields)
+  - Map relationships between people with custom relationship types
+  - Visualize your network with interactive force-directed graphs
+  - Organize contacts into custom groups
+  - Interactive map view with geocoded addresses and clustered markers
+  - Journal for logging interactions and notes over time
+  - Set reminders for important dates and staying in touch
+  - CardDAV sync with Google Contacts, iCloud, Outlook, and Nextcloud
+  - vCard and JSON import/export
+  - Duplicate detection and contact merging
+  - Global fuzzy search with accent-insensitive matching
+  - REST API with OpenAPI documentation and token authentication
+  - OIDC / SSO authentication support
+  - Installable as a PWA
+  - Trash with soft-delete and restore
+  - Bulk operations (delete, group assignment, relationships)
+  - Messaging app quick links (WhatsApp, Signal, Telegram, and more)
+  - Full dark and light theme support
+  - Multiple languages (English, Spanish, Japanese, Norwegian, German, Chinese, Italian, Russian, Dutch)
+  - Mobile-responsive design
+  - Multi-platform Docker support (AMD64 and ARM64)
+
+developer: mattogodoy
+website: https://nametag.one
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
+repo: https://github.com/mattogodoy/nametag
+support: https://github.com/mattogodoy/nametag/issues
+gallery:
+  - https://raw.githubusercontent.com/mattogodoy/nametag/master/docs/screenshots/dashboard-dark.png
+  - https://raw.githubusercontent.com/mattogodoy/nametag/master/docs/screenshots/people-dark.png
+  - https://raw.githubusercontent.com/mattogodoy/nametag/master/docs/screenshots/relationships-dark.png
+releaseNotes: |
+  Initial release of Nametag for Umbrel.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+backupIgnore:
+  - data/photos/*
