@@ -1,7 +1,4 @@
-version: "3.7"
-
 services:
-
   app_proxy:
     environment:
       APP_HOST: bwtai-faved_apache-php_1
@@ -9,7 +6,7 @@ services:
       PROXY_AUTH_ADD: "false"
 
   apache-php:
-    image: denho/faved:latest
+    image: denho/faved:latest@sha256:ca2eef7bea9d711379941235786e91e44bceb985c69b194ce063c01969ad3c08
     restart: on-failure
     working_dir: /var/www/html
     volumes:
