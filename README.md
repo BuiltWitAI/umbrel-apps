@@ -17,7 +17,6 @@ This is a **community Umbrel App Store** where I collect and distribute all the 
 | <img src="https://p2r3.github.io/convert/assets/favicon-Bfod-rsk.ico" alt="Convert" width="24"> | [Convert](bwtai-convert) | Truly universal online file converter |
 | <img src="https://github.com/jpillora/cloud-torrent/blob/master/static/files/cloud-favicon.png" alt="Cloud Torrent" width="24"> | [Cloud Torrent](bwtai-cloud-torrent) | Self-hosted remote torrent client with web UI |
 | <img src="https://raw.githubusercontent.com/glanceapp/glance/main/docs/logo.png" alt="Glance" width="24"> | [Glance](bwtai-glance) | A self-hosted dashboard that puts all your feeds in one place |
-| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-nametag/icon.png" alt="Nametag" width="24"> | [Nametag](bwtai-nametag) | Personal Relationship Manager — remember people and how they're connected |
 | <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-faved/icon.png" alt="Faved" width="24"> | [Faved](bwtai-faved) | Free open-source bookmark manager with customizable nested tags |
 
 ## How to Add This Store to Your Umbrel
