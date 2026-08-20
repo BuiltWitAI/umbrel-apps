@@ -2,7 +2,7 @@ manifestVersion: 1.1
 id: bwtai-snapotter
 name: SnapOtter
 tagline: Self-hosted file processing platform with 200+ tools
-category: Utilities
+category: utilities
 version: "2.2.0"
 port: 1349
 description: |
