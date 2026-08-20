@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Isometric cube made of smaller cubes -->
+  <defs>
+    <linearGradient id="topFace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="leftFace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#66BB6A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#388E3C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="rightFace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#388E3C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1B5E20;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main large cube (recursive: made of 3x3x3 smaller cubes) -->
+  <g transform="translate(128, 100) scale(1.2)">
+    <!-- Draw 3x3x3 grid of small cubes to represent recursion -->
+    <g id="smallCube">
+      <!-- Top face -->
+      <polygon points="0,-16 8,0 0,16 -8,0" fill="url(#topFace)" stroke="#1B5E20" stroke-width="0.5"/>
+      <!-- Left face -->
+      <polygon points="-8,0 0,16 0,48 -8,32" fill="url(#leftFace)" stroke="#1B5E20" stroke-width="0.5"/>
+      <!-- Right face -->
+      <polygon points="8,0 0,16 0,48 8,32" fill="url(#rightFace)" stroke="#1B5E20" stroke-width="0.5"/>
+    </g>
+
+    <!-- Layer 0 (bottom) - 3x3 grid -->
+    <use href="#smallCube" transform="translate(-24, 32)"/>
+    <use href="#smallCube" transform="translate(0, 32)"/>
+    <use href="#smallCube" transform="translate(24, 32)"/>
+    <use href="#smallCube" transform="translate(-24, 56)"/>
+    <use href="#smallCube" transform="translate(0, 56)"/>
+    <use href="#smallCube" transform="translate(24, 56)"/>
+    <use href="#smallCube" transform="translate(-24, 80)"/>
+    <use href="#smallCube" transform="translate(0, 80)"/>
+    <use href="#smallCube" transform="translate(24, 80)"/>
+
+    <!-- Layer 1 (middle) - 3x3 grid, offset up -->
+    <use href="#smallCube" transform="translate(-24, 8)"/>
+    <use href="#smallCube" transform="translate(0, 8)"/>
+    <use href="#smallCube" transform="translate(24, 8)"/>
+    <use href="#smallCube" transform="translate(-24, 32)"/>
+    <use href="#smallCube" transform="translate(0, 32)"/>
+    <use href="#smallCube" transform="translate(24, 32)"/>
+    <use href="#smallCube" transform="translate(-24, 56)"/>
+    <use href="#smallCube" transform="translate(0, 56)"/>
+    <use href="#smallCube" transform="translate(24, 56)"/>
+
+    <!-- Layer 2 (top) - 3x3 grid, offset up more -->
+    <use href="#smallCube" transform="translate(-24, -16)"/>
+    <use href="#smallCube" transform="translate(0, -16)"/>
+    <use href="#smallCube" transform="translate(24, -16)"/>
+    <use href="#smallCube" transform="translate(-24, 8)"/>
+    <use href="#smallCube" transform="translate(0, 8)"/>
+    <use href="#smallCube" transform="translate(24, 8)"/>
+    <use href="#smallCube" transform="translate(-24, 32)"/>
+    <use href="#smallCube" transform="translate(0, 32)"/>
+    <use href="#smallCube" transform="translate(24, 32)"/>
+  </g>
+
+  <!-- "AIC" text -->
+  <text x="128" y="230" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2E7D32" text-anchor="middle">AIC</text>
+</svg>

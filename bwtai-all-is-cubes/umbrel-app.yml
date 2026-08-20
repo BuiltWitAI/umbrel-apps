@@ -1,0 +1,36 @@
+manifestVersion: 1
+id: bwtai-all-is-cubes
+name: All is Cubes
+tagline: Recursive voxel game where blocks are made of blocks
+category: games
+version: "0.10.0"
+port: 8082
+icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-all-is-cubes/icon.svg
+description: |
+  All is Cubes is a voxel game engine where each ordinary block is itself made out of smaller blocks (one level of recursion). The game runs in browsers using WebGPU and WebAssembly.
+
+  Features:
+  - Recursive voxel rendering (blocks made of blocks)
+  - WebGPU-accelerated rendering with WebGL fallback
+  - Procedural content generation (Sponza Atrium demo scene)
+  - Runs entirely in the browser - no installation needed
+  - Open source (MIT/Apache-2.0)
+
+  This is the web edition served as a static site. The game requires a browser with WebGPU support (Chrome 113+, Edge 113+, Firefox 114+ with flag) or WebGL 2 fallback.
+
+  Note: This is an early development version. Many features are not yet implemented.
+developer: Kevin Reid
+website: https://kpreid.dreamwidth.org/tag/all+is+cubes
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
+repo: https://github.com/kpreid/all-is-cubes
+support: https://github.com/kpreid/all-is-cubes/issues
+gallery:
+  - https://raw.githubusercontent.com/kpreid/all-is-cubes/main/doc/sponza-demo.png
+releaseNotes: |
+  Initial release of All is Cubes for Umbrel.
+  This is the web version (v0.10.0) built from source.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
