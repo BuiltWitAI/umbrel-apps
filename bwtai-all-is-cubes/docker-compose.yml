@@ -8,7 +8,5 @@ services:
       PROXY_AUTH_ADD: "false"
 
   all-is-cubes:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/builtwitai/bwtai-all-is-cubes:latest
     restart: on-failure
