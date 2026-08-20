@@ -1,0 +1,41 @@
+manifestVersion: 1
+id: bwtai-snapotter
+name: SnapOtter
+tagline: Self-hosted file processing platform with 200+ tools
+icon: https://raw.githubusercontent.com/snapotter-hq/snapotter/main/apps/docs/public/logo.png
+category: Utilities
+version: "2.2.0"
+port: 1349
+description: |
+  SnapOtter is a self-hosted file processing platform with 200+ tools for images, videos, audio, PDFs, and documents — all in one container.
+
+  **Image (107 tools):** Resize, crop, compress, convert, remove background, upscale, OCR, watermark, collage, colorize, GIF tools, format presets
+  **Video (57 tools):** Trim, crop, compress, convert, merge, extract audio, auto subtitles, video to GIF, resize, stabilize, format presets
+  **Audio (27 tools):** Trim, merge, convert, normalize, noise reduction, transcribe, pitch shift, fade, ringtone maker, format presets
+  **PDF/Document (29 tools):** Merge, split, compress, OCR, watermark, redact, Word to PDF, Excel to PDF, rotate, protect, repair
+  **Files (23 tools):** CSV to JSON, JSON to XML, merge CSVs, split CSV, create ZIP, extract ZIP, chart maker, YAML/JSON
+
+  **Key features:**
+  - Pipelines: chain tools into multi-step workflows, apply to single files or batches
+  - File Library: versioned history of every processed file
+  - REST API: all tools accessible via HTTP with API keys
+  - Multi-user & Teams: role-based access control (Admin/User)
+  - Mobile-friendly: install as PWA on phone, take photos directly into tools
+  - GPU acceleration: optional NVIDIA CUDA for AI tools (background removal, upscaling, etc.)
+
+  Default login: `admin` / `admin` (change on first login)
+
+developer: snapotter-hq
+website: https://snapotter.com
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
+repo: https://github.com/snapotter-hq/snapotter
+support: https://github.com/snapotter-hq/snapotter/issues
+gallery:
+  - https://raw.githubusercontent.com/snapotter-hq/snapotter/main/apps/docs/public/og-image.png
+releaseNotes: |
+  Initial release of SnapOtter v2.2.0 for Umbrel.
+dependencies: []
+path: ""
+defaultUsername: admin
+defaultPassword: admin

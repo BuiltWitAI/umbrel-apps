@@ -1,0 +1,139 @@
+version: "3.7"
+
+services:
+
+  app_proxy:
+    environment:
+      # The format here is: <app-id>_<docker-service-name>_1
+      APP_HOST: bwtai-snapotter_snapotter_1
+      APP_PORT: 1349
+
+  snapotter:
+    image: snapotter/snapotter:latest
+    container_name: bwtai-snapotter
+    user: "1000:1000"
+    init: true
+    environment:
+      - AUTH_ENABLED=true
+      - DEFAULT_USERNAME=admin
+      - DEFAULT_PASSWORD=admin
+      - SKIP_MUST_CHANGE_PASSWORD=false
+      - MAX_UPLOAD_SIZE_MB=0
+      - MAX_BATCH_SIZE=0
+      - MAX_MEGAPIXELS=0
+      - CONCURRENT_JOBS=0
+      - MAX_WORKER_THREADS=0
+      - PROCESSING_TIMEOUT_S=0
+      - MAX_PIPELINE_STEPS=20
+      - RATE_LIMIT_PER_MIN=1000
+      - MAX_USERS=0
+      - SESSION_DURATION_HOURS=168
+      - TRUST_PROXY=loopback,linklocal,uniquelocal
+      - DATABASE_URL=postgres://snapotter:${POSTGRES_PASSWORD}@postgres:5432/snapotter
+      - REDIS_URL=redis://:${REDIS_PASSWORD}@redis:6379
+    volumes:
+      - snapotter-data:/data
+      - snapotter-workspace:/tmp/workspace
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    mem_limit: 6g
+    memswap_limit: 6g
+    cpus: 4
+    pids_limit: 512
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETUID
+      - SETGID
+      - DAC_OVERRIDE
+      - FOWNER
+      - KILL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "--max-time", "5", "http://localhost:1349/api/v1/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 3
+    shm_size: '2gb'
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "5"
+
+  postgres:
+    image: postgres:17-alpine@sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193
+    container_name: bwtai-snapotter-postgres
+    environment:
+      POSTGRES_USER: snapotter
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: snapotter
+    volumes:
+      - snapotter-pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    mem_limit: 1g
+    memswap_limit: 1g
+    cpus: 2
+    pids_limit: 256
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - FOWNER
+      - SETGID
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U snapotter -d snapotter"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 15s
+
+  redis:
+    image: redis:8-alpine@sha256:9d317178eceac8454a2284a9e6df2466b93c745529947f0cd42a0fa9609d7005
+    container_name: bwtai-snapotter-redis
+    command: >-
+      redis-server
+      --maxmemory-policy noeviction
+      --maxmemory 512mb
+      --appendonly yes
+      --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - snapotter-redisdata:/data
+    restart: unless-stopped
+    mem_limit: 1g
+    memswap_limit: 1g
+    cpus: 2
+    pids_limit: 256
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - FOWNER
+      - SETGID
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "--no-auth-warning", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+
+volumes:
+  snapotter-data:
+  snapotter-workspace:
+  snapotter-pgdata:
+  snapotter-redisdata:
