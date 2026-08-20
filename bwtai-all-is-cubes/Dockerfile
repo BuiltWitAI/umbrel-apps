@@ -16,11 +16,10 @@ RUN cargo install --locked wasm-pack@0.14.0 cargo-about@0.8.2
 # Set working directory
 WORKDIR /app
 
-# Copy the entire workspace (needed for workspace dependencies)
-COPY . .
+# Clone the all-is-cubes repository
+RUN git clone --depth 1 --branch main https://github.com/kpreid/all-is-cubes.git .
 
 # Build the web release (this runs cargo xtask build-web-release)
-# We need to build xtask first, then run build-web-release
 RUN cargo build --package xtask
 RUN cargo xtask build-web-release
 
