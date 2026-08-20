@@ -1,4 +1,4 @@
-manifestVersion: 1.1
+manifestVersion: 1
 id: bwtai-snapotter
 name: SnapOtter
 tagline: Self-hosted file processing platform with 200+ tools
@@ -38,3 +38,6 @@ dependencies: []
 path: ""
 defaultUsername: admin
 defaultPassword: admin
+backupIgnore:
+  - data/workspace/*
+  - data/redis/*

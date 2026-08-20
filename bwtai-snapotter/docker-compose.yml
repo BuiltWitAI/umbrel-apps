@@ -10,23 +10,23 @@ services:
 
   snapotter:
     image: snapotter/snapotter:latest
-    user: "1000:1000"
+    # user: "1000:1000"  # Commented - may not work rootless yet
     init: true
     environment:
       - AUTH_ENABLED=true
       - DEFAULT_USERNAME=admin
       - DEFAULT_PASSWORD=admin
       - SKIP_MUST_CHANGE_PASSWORD=false
-      - DATABASE_URL=postgres://snapotter:moneyprintergobrrr@bwtai-snapotter_postgres_1:5432/snapotter
+      - DATABASE_URL=postgres://snapotter:moneyprintergobrrr@bwtai-snapotter_db_1:5432/snapotter
       - REDIS_URL=redis://:moneyprintergobrrr@bwtai-snapotter_redis_1:6379
     volumes:
       - ${APP_DATA_DIR}/data/snapotter:/data
       - ${APP_DATA_DIR}/data/workspace:/tmp/workspace
     depends_on:
-      postgres:
+      db:
         condition: service_healthy
       redis:
-        condition: service_healthy
+        condition: service_started
     restart: on-failure
     healthcheck:
       test: ["CMD", "curl", "-sf", "--max-time", "5", "http://localhost:1349/api/v1/health"]
@@ -35,9 +35,9 @@ services:
       start_period: 60s
       retries: 3
 
-  postgres:
+  db:
+    # user: "1000:1000"  # Postgres doesn't work rootless
     image: postgres:17-alpine@sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193
-    user: "1000:1000"
     environment:
       POSTGRES_USER: snapotter
       POSTGRES_PASSWORD: moneyprintergobrrr
@@ -53,8 +53,8 @@ services:
       start_period: 15s
 
   redis:
-    image: redis:8-alpine@sha256:9d317178eceac8454a2284a9e6df2466b93c745529947f0cd42a0fa9609d7005
     user: "1000:1000"
+    image: redis:8-alpine@sha256:9d317178eceac8454a2284a9e6df2466b93c745529947f0cd42a0fa9609d7005
     command: >-
       redis-server
       --maxmemory-policy noeviction
