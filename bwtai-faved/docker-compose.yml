@@ -15,10 +15,14 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data/storage:/var/www/html/storage/
       - ${APP_DATA_DIR}/data/temp:/tmp/
+      - ${APP_DATA_DIR}/data/apache-conf:/etc/apache2/sites-enabled/
+      - ${APP_DATA_DIR}/data/certbot-conf:/etc/letsencrypt/
+    environment:
+      - PORT=80
     restart: on-failure
     healthcheck:
       test: ["CMD", "wget", "-qO", "/dev/null", "http://localhost:80/"]
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 20s
+      start_period: 30s
