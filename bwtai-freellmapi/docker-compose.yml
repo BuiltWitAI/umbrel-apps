@@ -1,0 +1,40 @@
+version: "3.7"
+
+services:
+
+  app_proxy:
+    environment:
+      # The format here is: <app-id>_<docker-service-name>_1
+      APP_HOST: bwtai-freellmapi_freellmapi_1
+      APP_PORT: 3001
+
+  freellmapi:
+    image: ghcr.io/tashfeenahmed/freellmapi:latest
+    user: "1000:1000"
+    init: true
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      # ENCRYPTION_KEY is auto-generated on first run if not set
+      # HOST_BIND=0.0.0.0  # Uncomment to expose to LAN (not recommended on untrusted networks)
+    volumes:
+      - freellmapi-data:/app/server/data
+    # Makes host.docker.internal resolve to host from inside container
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3001/api/ping').then((res) => { if (!res.ok) process.exit(1); }).catch(() => process.exit(1));"
+        ]
+      interval: 30s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+
+volumes:
+  freellmapi-data:
