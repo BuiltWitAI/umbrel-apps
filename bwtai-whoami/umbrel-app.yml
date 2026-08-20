@@ -5,6 +5,7 @@ tagline: Tiny Go HTTP server that prints OS/hostname info
 category: utilities
 version: "1.0.0"
 port: 80
+icon: https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo.png
 description: |
   Whoami is a tiny Go HTTP server that returns information about the request: IP address, hostname, headers, environment variables, and more.
 
@@ -13,15 +14,14 @@ description: |
   - Debugging reverse proxies
   - Checking request headers
   - Verifying app routing in Umbrel
-
-  Visit the app page in Umbrel to see all the request details displayed.
 developer: Traefik Labs
 website: https://github.com/traefik/whoami
 submitter: BuiltWitAI
 submission: https://github.com/BuiltWitAI/umbrel-apps
 repo: https://github.com/traefik/whoami
 support: https://github.com/traefik/whoami/issues
-gallery: []
+gallery:
+  - https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo.png
 releaseNotes: |
   Initial release of Whoami for Umbrel.
 dependencies: []
