@@ -1,0 +1,42 @@
+manifestVersion: 1
+id: bwtai-airpipe
+name: AirPipe
+tagline: Send files peer-to-peer between any devices with a passphrase
+category: files
+version: "1.0.0"
+port: 8088
+icon: https://raw.githubusercontent.com/Sanyam-G/Airpipe/main/demo.svg
+description: |
+  AirPipe sends files directly between any devices — CLI to CLI, browser to browser, or CLI to browser — using a passphrase. No account, no cloud storage, no scp.
+
+  How it works:
+  - Sender picks a file and gets a passphrase like "RIVER FALCON MARBLE 42"
+  - Receiver enters it on the web UI, the CLI, or by scanning the QR code
+  - File transfers directly between the two devices, encrypted end to end (NaCl secretbox / XSalsa20+Poly1305, 256-bit)
+  - Relay never sees your bytes — only the encrypted ciphertext passes through it
+
+  Features:
+  - Peer-to-peer file transfer with NAT traversal (punches through both NATs)
+  - Mailbox mode: sender can upload even if receiver is offline (file held encrypted for 10 minutes)
+  - Browser-to-browser transfer via /live endpoint (no install needed on either side)
+  - CLI tool: airpipe send / airpipe download / airpipe receive
+  - Multiple files/folders auto-zip
+  - Optional Watchtower auto-updater
+  - Config and stats at /health (JSON), /metrics (Prometheus)
+
+  Tunable env vars: PORT, AIRPIPE_ALLOWED_ORIGINS, AIRPIPE_RATE_LIMIT_PER_MIN, AIRPIPE_MAX_UPLOAD_MB, AIRPIPE_FILE_EXPIRY
+
+developer: Sanyam Garg
+website: https://airpipe.sanyamgarg.com
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
+repo: https://github.com/Sanyam-G/Airpipe
+support: https://github.com/Sanyam-G/Airpipe/issues
+gallery:
+  - https://raw.githubusercontent.com/Sanyam-G/Airpipe/main/demo.svg
+releaseNotes: |
+  Initial release of AirPipe for Umbrel.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
