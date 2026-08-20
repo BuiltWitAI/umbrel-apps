@@ -1,0 +1,33 @@
+manifestVersion: 1
+id: bwtai-xssnake
+name: XSSnake
+tagline: Multiplayer Snake where winners execute JS in other players' browsers
+category: games
+version: "1.0.0"
+port: 8083
+icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-xssnake/icon.png
+description: |
+  XSSnake is an online multiplayer Snake game with a twist: the winner of each game is allowed to execute JavaScript in the browser of other players.
+
+  Features:
+  - Real-time multiplayer Snake gameplay
+  - Unique "XSS" mechanic - winner injects JS into other players' browsers
+  - Web-based client (port 8002)
+  - WebSocket game server (port 8001)
+
+  ⚠️ **Warning**: This game executes arbitrary JavaScript from other players. Only play with trusted friends or in a controlled environment.
+
+developer: blaise-io
+website: https://github.com/blaise-io/xssnake
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
+repo: https://github.com/blaise-io/xssnake
+support: https://github.com/blaise-io/xssnake/issues
+gallery:
+  - https://raw.githubusercontent.com/blaise-io/xssnake/master/xssnake.png
+releaseNotes: |
+  Initial release of XSSnake for Umbrel.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
