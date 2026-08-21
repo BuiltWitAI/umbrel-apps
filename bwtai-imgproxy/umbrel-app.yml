@@ -4,7 +4,7 @@ name: imgproxy
 tagline: Fast and secure standalone image resizing and processing server
 category: utilities
 version: "3.7.0"
-port: 8096
+port: 8097
 icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-imgproxy/icon.png
 description: >-
   imgproxy is a fast and secure standalone server for resizing and processing remote images. It uses a URL-based API to transform images on the fly.
