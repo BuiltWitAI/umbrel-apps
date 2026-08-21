@@ -19,16 +19,18 @@ This is a **community Umbrel App Store** where I collect and distribute all the 
 | <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-glance/icon.png" alt="Glance" width="24"> | [Glance](bwtai-glance) | A self-hosted dashboard that puts all your feeds in one place |
 | <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-cyberchef/icon.png" alt="CyberChef" width="24"> | [CyberChef](bwtai-cyberchef) | The Cyber Swiss Army Knife — encryption, encoding, compression, data analysis |
 | <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-jsoncrack/icon.png" alt="JSON Crack" width="24"> | [JSON Crack](bwtai-jsoncrack) | Visualize JSON, YAML, XML, CSV into interactive graphs |
+| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-microbin/icon.png" alt="Microbin" width="24"> | [Microbin](bwtai-microbin) | Lightweight pastebin & URL shortener |
+| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-glance/icon.png" alt="Glance" width="24"> | [Glance](bwtai-glance) | A self-hosted dashboard that puts all your feeds in one place |
 
 ## How to Add This Store to Your Umbrel
-
-### One-click (opens Umbrel UI directly)
-[**Add BIG App Store to Umbrel**](http://umbrel.local/app-store?dialog=add-community-store&url=https://github.com/BuiltWitAI/umbrel-apps)
 
 ### Manual method
 1. Go to **Settings → App Store** in your Umbrel dashboard
 2. Click **"Add Custom App Store"**
 3. Enter this repository URL: `https://github.com/BuiltWitAI/umbrel-apps`
 4. The "BIG App Store" will appear with all available apps
+
+### One-click (opens Umbrel UI with URL pre-filled)
+[**Add BIG App Store to Umbrel**](http://umbrel.local/app-store?dialog=add-community-store&url=https://github.com/BuiltWitAI/umbrel-apps)
 
 *This store is maintained by [BuiltWitAI](https://github.com/BuiltWitAI). Feel free to fork and create your own!*
