@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: bwtai-fx_web_1
+      APP_PORT: 3000
+      PROXY_AUTH_ADD: "false"
+
+  web:
+    image: rikhuijzer/fx:1.6.1@sha256:f8273fe7a698306db27ca321cd64b2ad5c60a574254bbb7c0e901e42e2f0e925
+    restart: on-failure
+    environment:
+      - FX_USERNAME=admin
+      - FX_DOMAIN=umbrel.local
+    volumes:
+      - ${APP_DATA_DIR}/data:/data

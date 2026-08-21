@@ -1,0 +1,34 @@
+manifestVersion: 1
+id: bwtai-fx
+name: fx
+tagline: Efficient self-hosted microblogging service
+category: media
+version: "1.6.1"
+port: 18510
+icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-fx/icon.png
+description: |
+  fx is a Twitter/Bluesky-like (micro)blogging service that you can self-host. Write posts in Markdown with built-in syntax highlighting and math expressions (LaTeX). Low memory footprint, mobile-friendly editing, file/image uploads, automatic backup to plain text files, and RSS feed following.
+
+  ### Features
+  - Write posts in Markdown with syntax highlighting
+  - Built-in math expressions (LaTeX syntax, e.g., $E=mc^2$)
+  - Publish and edit from desktop or mobile
+  - Upload files and images to embed in posts
+  - Automatic backup to plain text files
+  - Follow RSS feeds (blogroll)
+  - Low memory footprint (few MB)
+
+developer: rikhuijzer
+website: https://github.com/rikhuijzer/fx
+dependencies: []
+repo: https://github.com/rikhuijzer/fx
+support: https://github.com/rikhuijzer/fx/issues
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
+releaseNotes: >-
+  Initial release of fx for Umbrel.
+  Based on fx v1.6.1 (rikhuijzer/fx:1.6.1).
