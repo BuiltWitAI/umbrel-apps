@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: text0wnz
+      APP_PORT: 80
+      PROXY_AUTH_ADD: "false"
+
+  text0wnz:
+    image: xerostyle/text0wnz:latest
+    restart: on-failure
+    environment:
+      - DOMAIN=localhost
+      - NODE_ENV=production
+      - PORT=1337
+    volumes:
+      - ${APP_DATA_DIR}/data:/var/lib/caddy
+    cap_add:
+      - NET_BIND_SERVICE
