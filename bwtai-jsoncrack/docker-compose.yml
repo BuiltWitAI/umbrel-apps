@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: jsoncrack
+      APP_PORT: 8080
+      PROXY_AUTH_ADD: "false"
+
+  jsoncrack:
+    image: shokohsc/jsoncrack:latest
+    restart: on-failure

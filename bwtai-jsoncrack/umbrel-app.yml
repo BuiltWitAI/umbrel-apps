@@ -1,0 +1,44 @@
+manifestVersion: 1
+id: bwtai-jsoncrack
+name: JSON Crack
+tagline: Visualize JSON, YAML, XML, CSV into interactive graphs
+category: utilities
+version: "1.0.0"
+port: 8090
+icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-jsoncrack/icon.png
+description: |
+  JSON Crack is an open-source visualization application that transforms various data formats (JSON, YAML, XML, CSV) into interactive graphs.
+
+  **Features:**
+  - **Visualizer**: Convert JSON, YAML, CSV, XML into interactive graphs/trees
+  - **Format & Validate**: Beautify and validate JSON, YAML, CSV
+  - **Convert**: Transform between formats (JSON ↔ CSV ↔ YAML ↔ XML)
+  - **Code Generation**: Generate TypeScript interfaces, Go structs, Kotlin data classes, Rust serde, JSON Schema
+  - **JSON Schema**: Create and validate JSON Schema
+  - **Advanced Tools**: Run jq and JSONPath queries
+  - **Export**: Download visualizations as PNG, JPEG, SVG
+  - **Dark/Light mode** support
+  - **Privacy**: All processing happens locally in your browser
+
+  **Supported formats:**
+  - JSON, YAML, CSV, XML
+  - TOML, protobuf, MessagePack (partial)
+
+  Runs entirely in the browser - your data never leaves your device.
+
+developer: Aykut Sarac
+website: https://jsoncrack.com
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
+repo: https://github.com/AykutSarac/jsoncrack.com
+support: https://github.com/AykutSarac/jsoncrack.com/issues
+gallery:
+  - https://raw.githubusercontent.com/AykutSarac/jsoncrack.com/main/apps/www/public/assets/editor.webp
+  - https://raw.githubusercontent.com/AykutSarac/jsoncrack.com/main/apps/www/public/assets/diagram-dark.png
+releaseNotes: |
+  Initial release of JSON Crack for Umbrel.
+  Uses community Docker image shokohsc/jsoncrack:latest.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
