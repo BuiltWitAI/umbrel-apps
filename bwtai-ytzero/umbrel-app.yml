@@ -9,21 +9,7 @@ icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-ytze
 description: >-
   YT Zero turns YouTube into a simple, private reader for channels you chose on purpose. No Google account, no API key, no algorithmic feed.
 
-  **Features:**
-  - Subscription inbox — all new videos from followed channels in one chronological feed
-  - No Google dependency — works without a Google account or YouTube Data API key
-  - Local-first state — subscriptions, progress, history, playlists, tags in your own SQLite/PostgreSQL database
-  - Watch later & Archive — schedule videos for later, reject what you won't watch
-  - Tags & Rules — tag videos/channels, inherit channel tags, automate sorting
-  - Profiles & Authentication — multiple profiles, shared login, OIDC, passkeys, WebAuthn
-  - Child profiles & Child Lock — daily watch-time limits, parent-approved content, PIN-protected settings
-  - Audio mode — background audio playback for videos and active livestreams (works on iOS Safari lock screen)
-  - Downloads (yt-dlp) — scheduled/manual downloads, plays local files in built-in player with SponsorBlock, chapters, seeking
-  - TubeArchivist Integration — use existing archive as source in normal feed
-  - DeArrow — community-created titles/thumbnails
-  - SponsorBlock — skip sponsored segments
-  - Shorts tab — followed-channels-only vertical Shorts feed with swipe player
-  - Pulse — viewing analytics by profile, channel, tag, hour, content type
+  Features: Subscription inbox — all new videos from followed channels in one chronological feed; No Google dependency — works without a Google account or YouTube Data API key; Local-first state — subscriptions, progress, history, playlists, tags in your own SQLite/PostgreSQL database; Watch later & Archive — schedule videos for later, reject what you won't watch; Tags & Rules — tag videos/channels, inherit channel tags, automate sorting; Profiles & Authentication — multiple profiles, shared login, OIDC, passkeys, WebAuthn; Child profiles & Child Lock — daily watch-time limits, parent-approved content, PIN-protected settings; Audio mode — background audio playback for videos and active livestreams (works on iOS Safari lock screen); Downloads (yt-dlp) — scheduled/manual downloads, plays local files in built-in player with SponsorBlock, chapters, seeking; TubeArchivist Integration — use existing archive as source in normal feed; DeArrow — community-created titles/thumbnails; SponsorBlock — skip sponsored segments; Shorts tab — followed-channels-only vertical Shorts feed with swipe player; Pulse — viewing analytics by profile, channel, tag, hour, content type.
 
   Data stored under /data (database, cache, avatars, logs, downloads).
 developer: Pelski

@@ -15,7 +15,7 @@ submission: https://github.com/BuiltWitAI/umbrel-apps
 repo: https://github.com/glanceapp/glance
 support: https://github.com/glanceapp/glance/issues
 gallery:
-  - https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-glance/icon.png
+  - https://raw.githubusercontent.com/glanceapp/glance/main/screenshot.png
 releaseNotes: >-
   Initial release of Glance for Umbrel.
 dependencies: []

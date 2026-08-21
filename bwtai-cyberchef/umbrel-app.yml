@@ -9,25 +9,9 @@ icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-cybe
 description: >-
   CyberChef is a simple, intuitive web app for carrying out all manner of "cyber" operations within a web browser.
 
-  **Operations include:**
-  - **Encoding/Decoding**: Base64, URL, Hex, HTML entities, XOR, ROT13
-  - **Encryption**: AES, DES, Blowfish, RC4, Rabbit, ChaCha
-  - **Compression**: Gzip, Deflate, LZMA, Zlib
-  - **Hashing**: MD5, SHA-1, SHA-256, SHA-512, RIPEMD, CRC32
-  - **Networking**: IP address conversion, CIDR, IPv6 parsing
-  - **Data formats**: JSON, XML, YAML, CSV, Protobuf parsing
-  - **File analysis**: Hexdump, magic bytes, PE/ELF parsing
-  - **And 200+ more operations**
+  Operations include: Encoding/Decoding (Base64, URL, Hex, HTML entities, XOR, ROT13), Encryption (AES, DES, Blowfish, RC4, Rabbit, ChaCha), Compression (Gzip, Deflate, LZMA, Zlib), Hashing (MD5, SHA-1, SHA-256, SHA-512, RIPEMD, CRC32), Networking (IP address conversion, CIDR, IPv6 parsing), Data formats (JSON, XML, YAML, CSV, Protobuf parsing), File analysis (Hexdump, magic bytes, PE/ELF parsing), and 200+ more operations.
 
-  **Features:**
-  - Drag-and-drop recipe builder
-  - Auto-bake (real-time output)
-  - Magic (automated encoding detection)
-  - Breakpoints and step-through debugging
-  - Save/load recipes locally
-  - Deep linking via URL
-  - Works entirely client-side - no data sent to server
-  - Dark/light theme support
+  Features: Drag-and-drop recipe builder, Auto-bake (real-time output), Magic (automated encoding detection), Breakpoints and step-through debugging, Save/load recipes locally, Deep linking via URL, Works entirely client-side - no data sent to server, Dark/light theme support.
 
   All processing happens in your browser - your data never leaves your device.
 developer: GCHQ
@@ -37,7 +21,7 @@ submission: https://github.com/BuiltWitAI/umbrel-apps
 repo: https://github.com/gchq/CyberChef
 support: https://github.com/gchq/CyberChef/issues
 gallery:
-  - https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-cyberchef/icon.png
+  - https://raw.githubusercontent.com/gchq/CyberChef/master/src/web/static/images/cyberchef-512x512.png
 releaseNotes: >-
   Initial release of CyberChef for Umbrel (v11.4.0).
 dependencies: []

@@ -9,11 +9,7 @@ icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-whoa
 description: >-
   Whoami is a tiny Go HTTP server that returns information about the request: IP address, hostname, headers, environment variables, and more.
 
-  **Useful for:**
-  - Testing network connectivity
-  - Debugging reverse proxies
-  - Checking request headers
-  - Verifying app routing in Umbrel
+  Useful for: Testing network connectivity, Debugging reverse proxies, Checking request headers, Verifying app routing in Umbrel.
 developer: Traefik Labs
 website: https://github.com/traefik/whoami
 submitter: BuiltWitAI
@@ -21,7 +17,7 @@ submission: https://github.com/BuiltWitAI/umbrel-apps
 repo: https://github.com/traefik/whoami
 support: https://github.com/traefik/whoami/issues
 gallery:
-  - https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-whoami/icon.png
+  - https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo.png
 releaseNotes: >-
   Initial release of Whoami for Umbrel.
 dependencies: []

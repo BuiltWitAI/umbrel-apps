@@ -9,20 +9,9 @@ icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-json
 description: >-
   JSON Crack is an open-source visualization application that transforms various data formats (JSON, YAML, XML, CSV) into interactive graphs.
 
-  **Features:**
-  - **Visualizer**: Convert JSON, YAML, CSV, XML into interactive graphs/trees
-  - **Format & Validate**: Beautify and validate JSON, YAML, CSV
-  - **Convert**: Transform between formats (JSON ↔ CSV ↔ YAML ↔ XML)
-  - **Code Generation**: Generate TypeScript interfaces, Go structs, Kotlin data classes, Rust serde, JSON Schema
-  - **JSON Schema**: Create and validate JSON Schema
-  - **Advanced Tools**: Run jq and JSONPath queries
-  - **Export**: Download visualizations as PNG, JPEG, SVG
-  - **Dark/Light mode** support
-  - **Privacy**: All processing happens locally in your browser
+  Features: Visualizer (convert JSON, YAML, CSV, XML into interactive graphs/trees), Format & Validate (beautify and validate JSON, YAML, CSV), Convert (transform between formats like JSON to CSV or XML to JSON), Code Generation (TypeScript interfaces, Go structs, Kotlin data classes, Rust serde, JSON Schema), JSON Schema (create and validate), Advanced Tools (jq and JSONPath queries), Export (PNG, JPEG, SVG), Dark/Light mode support, Privacy (all processing happens locally in your browser).
 
-  **Supported formats:**
-  - JSON, YAML, CSV, XML
-  - TOML, protobuf, MessagePack (partial)
+  Supported formats: JSON, YAML, CSV, XML, TOML, protobuf, MessagePack (partial).
 
   Runs entirely in the browser - your data never leaves your device.
 developer: Aykut Sarac
