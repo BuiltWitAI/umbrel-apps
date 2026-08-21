@@ -22,6 +22,10 @@ This is a **community Umbrel App Store** where I collect and distribute all the 
 
 ## How to Add This Store to Your Umbrel
 
+### One-click (opens Umbrel UI directly)
+[**Add BIG App Store to Umbrel**](http://umbrel.local/app-store?dialog=add-community-store&url=https://github.com/BuiltWitAI/umbrel-apps)
+
+### Manual method
 1. Go to **Settings → App Store** in your Umbrel dashboard
 2. Click **"Add Custom App Store"**
 3. Enter this repository URL: `https://github.com/BuiltWitAI/umbrel-apps`
