@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: imgproxy
+      APP_PORT: 8080
+      PROXY_AUTH_ADD: "false"
+
+  imgproxy:
+    image: ghcr.io/imgproxy/imgproxy:latest
+    restart: on-failure
+    environment:
+      - IMGPROXY_BIND=:8080
+      - IMGPROXY_LOCAL_FILESYSTEM_ROOT=/
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    ports:
+      - "8080:8080"
