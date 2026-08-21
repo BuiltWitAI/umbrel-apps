@@ -13,5 +13,6 @@ services:
     environment:
       - FX_USERNAME=admin
       - FX_DOMAIN=umbrel.local
+      - FX_PASSWORD=umbrel
     volumes:
       - ${APP_DATA_DIR}/data:/data
