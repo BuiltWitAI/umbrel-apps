@@ -1,0 +1,31 @@
+manifestVersion: 1
+id: bwtai-microbin
+name: MicroBin
+tagline: Self-hosted pastebin with file uploads and URL shortening
+category: utilities
+version: "1.0.0"
+port: 8091
+icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-microbin/icon.png
+description: >-
+  MicroBin is a super tiny, feature-rich, self-contained paste bin web application written in Rust.
+
+  Features: Entirely self-contained executable; Server-side and client-side E2E encryption; File uploads (server.com/file/pig-dog-cat); Raw text serving (server.com/raw/pig-dog-cat); QR code support; URL shortening and redirection; Animal names instead of random numbers for upload identifiers (64 animals); Multiple attachments; SQLite and JSON database support; Private and public, editable and uneditable, automatically and never expiring uploads; Automatic dark mode and custom styling support with vanilla JS; Syntax highlighting.
+
+  Use cases: Pastebin for code snippets; File sharing (too large for Discord/email); URL shortener/redirect service; Secure secret sharing; Serving content on the web (configs, images); Moving files between desktop and server; Postbox service for anonymous uploads; Note taking.
+
+  All data stored locally in /app/data (JSON + files or SQLite).
+developer: Dániel Szabó
+website: https://microbin.eu
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
+repo: https://github.com/szabodanika/microbin
+support: https://github.com/szabodanika/microbin/issues
+gallery:
+  - https://raw.githubusercontent.com/szabodanika/microbin/master/.github/index.png
+releaseNotes: >-
+  Initial release of MicroBin for Umbrel.
+  Uses official Docker image danielszabo99/microbin:latest.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
