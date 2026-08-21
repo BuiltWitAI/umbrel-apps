@@ -1,0 +1,35 @@
+manifestVersion: 1
+id: bwtai-d9
+name: d9
+tagline: Open-source fork of Directus 9 - headless CMS & API
+category: developer
+version: "12.5.4"
+port: 18510
+icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-d9/icon.png
+description: |
+  d9 is an open-source fork of Directus 9 (GPLv3), maintained independently by La Webcapsule. As Directus 10+ is now a premium open-source software, this repository aims to maintain a standard open-source version of Directus 9.
+
+  ### Features
+  - REST & GraphQL API — Instantly layers a blazingly fast Node.js API on top of any SQL database
+  - Manage pure SQL — Works with new or existing SQL databases, no migration required
+  - Multi-database support — PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB, and MS-SQL
+  - Self-hosted — Run on your own infrastructure. You own your data
+  - Fully extensible — Modular architecture, easy to customize with extensions
+  - No-code Data Studio — An intuitive Vue.js dashboard for non-technical users
+  - Drop-in compatibility — Same database schema as Directus 9. Migrate in minutes, not days
+
+  d9 is not affiliated with, endorsed by, or connected to the Directus core team or Monospace Inc.
+developer: La Webcapsule
+website: https://d9.webcapsule.io
+dependencies: []
+repo: https://github.com/LaWebcapsule/d9
+support: https://github.com/LaWebcapsule/d9/issues
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
+releaseNotes: >-
+  Initial release of d9 for Umbrel.
+  Based on d9 v12.5.4 (lawebcapsule/d9:12.5.4).

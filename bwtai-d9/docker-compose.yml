@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: bwtai-d9_web_1
+      APP_PORT: 8055
+      PROXY_AUTH_ADD: "false"
+
+  web:
+    image: lawebcapsule/d9:12.5.4@sha256:480be8c9ac39e20110d5069f30b825bebfe7acb4ea12f46fe49b6ba416248703
+    restart: on-failure
+    user: "1000:1000"
+    environment:
+      - KEY=255d861b-5ea1-5996-9aa3-922530ec40b1
+      - SECRET=6116487b-cda1-52c2-b5b5-c8022c45e263
+      - DB_CLIENT=sqlite3
+      - DB_FILENAME=/directus/database/database.sqlite
+      - EXTENSIONS_PATH=/directus/extensions
+      - STORAGE_LOCAL_ROOT=/directus/uploads
+    volumes:
+      - ${APP_DATA_DIR}/data/uploads:/directus/uploads
+      - ${APP_DATA_DIR}/data/database:/directus/database
+      - ${APP_DATA_DIR}/data/extensions:/directus/extensions
