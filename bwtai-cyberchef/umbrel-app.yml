@@ -21,7 +21,7 @@ submission: https://github.com/BuiltWitAI/umbrel-apps
 repo: https://github.com/gchq/CyberChef
 support: https://github.com/gchq/CyberChef/issues
 gallery:
-  - https://raw.githubusercontent.com/gchq/CyberChef/master/src/web/static/images/cyberchef-512x512.png
+  - https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-cyberchef/icon.png
 releaseNotes: >-
   Initial release of CyberChef for Umbrel (v11.4.0).
 dependencies: []

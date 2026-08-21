@@ -17,7 +17,7 @@ submission: https://github.com/BuiltWitAI/umbrel-apps
 repo: https://github.com/traefik/whoami
 support: https://github.com/traefik/whoami/issues
 gallery:
-  - https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo.png
+  - https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-whoami/icon.png
 releaseNotes: >-
   Initial release of Whoami for Umbrel.
 dependencies: []

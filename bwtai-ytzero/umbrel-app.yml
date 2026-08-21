@@ -19,9 +19,7 @@ submission: https://github.com/BuiltWitAI/umbrel-apps
 repo: https://github.com/Pelski/ytzero
 support: https://github.com/Pelski/ytzero/issues
 gallery:
-  - https://raw.githubusercontent.com/Pelski/ytzero/main/docs/assets/feed.png
-  - https://raw.githubusercontent.com/Pelski/ytzero/main/docs/assets/video-standard.png
-  - https://raw.githubusercontent.com/Pelski/ytzero/main/docs/assets/tags.png
+  - https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-ytzero/icon.png
 releaseNotes: >-
   Initial release of YT Zero for Umbrel.
   Based on YT Zero v2026.08.1.
