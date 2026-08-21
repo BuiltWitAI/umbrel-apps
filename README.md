@@ -12,14 +12,14 @@ This is a **community Umbrel App Store** where I collect and distribute all the 
 
 | Icon | App | Description |
 |------|-----|-------------|
-| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/main/bwtai-whoami/icon.png" alt="Whoami" width="24"> | [Whoami](bwtai-whoami) | Tiny Go HTTP server that prints OS/hostname info |
-| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/main/bwtai-ytzero/icon.png" alt="YT Zero" width="24"> | [YT Zero](bwtai-ytzero) | Self-hosted YouTube inbox — subscriptions without recommendations |
-| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/main/bwtai-convert/icon.png" alt="Convert" width="24"> | [Convert](bwtai-convert) | Truly universal online file converter |
-| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/main/bwtai-cloud-torrent/icon.png" alt="Cloud Torrent" width="24"> | [Cloud Torrent](bwtai-cloud-torrent) | Self-hosted remote torrent client with web UI |
-| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/main/bwtai-glance/icon.png" alt="Glance" width="24"> | [Glance](bwtai-glance) | A self-hosted dashboard that puts all your feeds in one place |
-| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/main/bwtai-cyberchef/icon.png" alt="CyberChef" width="24"> | [CyberChef](bwtai-cyberchef) | The Cyber Swiss Army Knife — encryption, encoding, compression, data analysis |
-| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/main/bwtai-jsoncrack/icon.png" alt="JSON Crack" width="24"> | [JSON Crack](bwtai-jsoncrack) | Visualize JSON, YAML, XML, CSV into interactive graphs |
-| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/main/bwtai-microbin/icon.png" alt="Microbin" width="24"> | [Microbin](bwtai-microbin) | Lightweight pastebin & URL shortener |
+| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-whoami/icon.png" alt="Whoami" width="24"> | [Whoami](bwtai-whoami) | Tiny Go HTTP server that prints OS/hostname info |
+| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-ytzero/icon.png" alt="YT Zero" width="24"> | [YT Zero](bwtai-ytzero) | Self-hosted YouTube inbox — subscriptions without recommendations |
+| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-convert/icon.png" alt="Convert" width="24"> | [Convert](bwtai-convert) | Truly universal online file converter |
+| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-cloud-torrent/icon.png" alt="Cloud Torrent" width="24"> | [Cloud Torrent](bwtai-cloud-torrent) | Self-hosted remote torrent client with web UI |
+| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-glance/icon.png" alt="Glance" width="24"> | [Glance](bwtai-glance) | A self-hosted dashboard that puts all your feeds in one place |
+| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-cyberchef/icon.png" alt="CyberChef" width="24"> | [CyberChef](bwtai-cyberchef) | The Cyber Swiss Army Knife — encryption, encoding, compression, data analysis |
+| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-jsoncrack/icon.png" alt="JSON Crack" width="24"> | [JSON Crack](bwtai-jsoncrack) | Visualize JSON, YAML, XML, CSV into interactive graphs |
+| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-microbin/icon.png" alt="Microbin" width="24"> | [Microbin](bwtai-microbin) | Lightweight pastebin & URL shortener |
 
 ## How to Add This Store to Your Umbrel
 
