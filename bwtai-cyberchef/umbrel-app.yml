@@ -4,7 +4,7 @@ name: CyberChef
 tagline: The Cyber Swiss Army Knife - web app for encryption, encoding, compression and data analysis
 category: utilities
 version: "11.4.0"
-port: 8089
+port: 18505
 icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-cyberchef/icon.png
 description: >-
   CyberChef is a simple, intuitive web app for carrying out all manner of "cyber" operations within a web browser.

@@ -4,7 +4,7 @@ name: Convert
 tagline: Truly universal online file converter
 category: utilities
 version: "1.0.0"
-port: 8089
+port: 18504
 icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-convert/icon.png
 description: >-
   Convert is a truly universal file converter that works entirely in your browser (client-side). No files are uploaded to any server — everything runs locally using WebAssembly and JavaScript.

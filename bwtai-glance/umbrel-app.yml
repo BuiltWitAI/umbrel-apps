@@ -4,7 +4,7 @@ name: Glance
 tagline: A self-hosted dashboard that puts all your feeds in one place
 category: utilities
 version: "1.0.0"
-port: 8092
+port: 18506
 icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-glance/icon.png
 description: >-
   A self-hosted dashboard that puts all your feeds in one place. Supports RSS, Reddit, Hacker News, Weather, YouTube, Twitch, Docker, server stats, and many more widgets. Highly customizable with multiple layouts and themes.

@@ -4,7 +4,7 @@ name: Cloud Torrent
 tagline: Self-hosted remote torrent client with web UI
 category: networking
 version: "1.0.0"
-port: 3000
+port: 18503
 icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-cloud-torrent/icon.png
 description: >-
   Cloud Torrent is a self-hosted remote torrent client written in Go. You can add torrents via a web interface, and they are downloaded to your server's disk. The downloaded files are then retrievable or streamable via HTTP.

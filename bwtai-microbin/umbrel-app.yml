@@ -4,7 +4,7 @@ name: MicroBin
 tagline: Self-hosted pastebin with file uploads and URL shortening
 category: utilities
 version: "1.0.0"
-port: 8091
+port: 18508
 icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-microbin/icon.png
 description: >-
   MicroBin is a super tiny, feature-rich, self-contained paste bin web application written in Rust.
