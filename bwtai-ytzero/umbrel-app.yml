@@ -5,11 +5,11 @@ tagline: Self-hosted YouTube inbox — subscriptions without recommendations
 category: media
 version: "2026.08.1"
 port: 8190
-icon: https://raw.githubusercontent.com/Pelski/ytzero/main/docs/assets/icon.png
-description: |
+icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-ytzero/icon.png
+description: >-
   YT Zero turns YouTube into a simple, private reader for channels you chose on purpose. No Google account, no API key, no algorithmic feed.
 
-  Features:
+  **Features:**
   - Subscription inbox — all new videos from followed channels in one chronological feed
   - No Google dependency — works without a Google account or YouTube Data API key
   - Local-first state — subscriptions, progress, history, playlists, tags in your own SQLite/PostgreSQL database
@@ -26,7 +26,6 @@ description: |
   - Pulse — viewing analytics by profile, channel, tag, hour, content type
 
   Data stored under /data (database, cache, avatars, logs, downloads).
-
 developer: Pelski
 website: https://github.com/Pelski/ytzero
 submitter: BuiltWitAI
@@ -37,7 +36,7 @@ gallery:
   - https://raw.githubusercontent.com/Pelski/ytzero/main/docs/assets/feed.png
   - https://raw.githubusercontent.com/Pelski/ytzero/main/docs/assets/video-standard.png
   - https://raw.githubusercontent.com/Pelski/ytzero/main/docs/assets/tags.png
-releaseNotes: |
+releaseNotes: >-
   Initial release of YT Zero for Umbrel.
   Based on YT Zero v2026.08.1.
 dependencies: []

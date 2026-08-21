@@ -5,8 +5,8 @@ tagline: A self-hosted dashboard that puts all your feeds in one place
 category: utilities
 version: "1.0.0"
 port: 8092
-icon: https://raw.githubusercontent.com/glanceapp/glance/main/docs/logo.png
-description: |
+icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-glance/icon.png
+description: >-
   A self-hosted dashboard that puts all your feeds in one place. Supports RSS, Reddit, Hacker News, Weather, YouTube, Twitch, Docker, server stats, and many more widgets. Highly customizable with multiple layouts and themes.
 developer: glanceapp
 website: https://github.com/glanceapp/glance
@@ -15,8 +15,8 @@ submission: https://github.com/BuiltWitAI/umbrel-apps
 repo: https://github.com/glanceapp/glance
 support: https://github.com/glanceapp/glance/issues
 gallery:
-  - https://raw.githubusercontent.com/glanceapp/glance/main/docs/images/readme-main-image.png
-releaseNotes: |
+  - https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-glance/icon.png
+releaseNotes: >-
   Initial release of Glance for Umbrel.
 dependencies: []
 path: ""

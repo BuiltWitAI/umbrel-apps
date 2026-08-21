@@ -5,21 +5,18 @@ tagline: Truly universal online file converter
 category: utilities
 version: "1.0.0"
 port: 8089
-icon: https://p2r3.github.io/convert/assets/favicon-Bfod-rsk.ico
-description: |
+icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-convert/icon.png
+description: >-
   Convert is a truly universal file converter that works entirely in your browser (client-side). No files are uploaded to any server — everything runs locally using WebAssembly and JavaScript.
 
-  Features:
+  **Features:**
   - Convert between 100+ formats across images, video, audio, documents, archives, code, 3D models, fonts, and more
   - Cross-medium conversions (e.g., video to GIF, PDF to images, audio to video)
   - No server-side processing — complete privacy
   - Runs offline once loaded (PWA support)
   - Self-hosted on your Umbrel
 
-  Supported categories: Image, Video, Audio, Document, Archive, Code, 3D Model, Font, eBook, and more.
-
-  Visit the app page at /convert/ to use the converter.
-
+  **Supported categories:** Image, Video, Audio, Document, Archive, Code, 3D Model, Font, eBook, and more.
 developer: p2r3
 website: https://convert.to.it
 submitter: BuiltWitAI
@@ -27,8 +24,8 @@ submission: https://github.com/BuiltWitAI/umbrel-apps
 repo: https://github.com/p2r3/convert
 support: https://github.com/p2r3/convert/issues
 gallery:
-  - https://raw.githubusercontent.com/p2r3/convert/main/demo.png
-releaseNotes: |
+  - https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-convert/icon.png
+releaseNotes: >-
   Initial release of Convert for Umbrel.
   Based on convert v1.0.0 (ghcr.io/p2r3/convert:latest).
 dependencies: []

@@ -6,7 +6,7 @@ category: utilities
 version: "11.4.0"
 port: 8089
 icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-cyberchef/icon.png
-description: |
+description: >-
   CyberChef is a simple, intuitive web app for carrying out all manner of "cyber" operations within a web browser.
 
   **Operations include:**
@@ -30,7 +30,6 @@ description: |
   - Dark/light theme support
 
   All processing happens in your browser - your data never leaves your device.
-
 developer: GCHQ
 website: https://gchq.github.io/CyberChef
 submitter: BuiltWitAI
@@ -38,8 +37,8 @@ submission: https://github.com/BuiltWitAI/umbrel-apps
 repo: https://github.com/gchq/CyberChef
 support: https://github.com/gchq/CyberChef/issues
 gallery:
-  - https://raw.githubusercontent.com/gchq/CyberChef/master/docs/images/screenshot.png
-releaseNotes: |
+  - https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-cyberchef/icon.png
+releaseNotes: >-
   Initial release of CyberChef for Umbrel (v11.4.0).
 dependencies: []
 path: ""

@@ -6,7 +6,7 @@ category: utilities
 version: "1.0.0"
 port: 8090
 icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-jsoncrack/icon.png
-description: |
+description: >-
   JSON Crack is an open-source visualization application that transforms various data formats (JSON, YAML, XML, CSV) into interactive graphs.
 
   **Features:**
@@ -25,7 +25,6 @@ description: |
   - TOML, protobuf, MessagePack (partial)
 
   Runs entirely in the browser - your data never leaves your device.
-
 developer: Aykut Sarac
 website: https://jsoncrack.com
 submitter: BuiltWitAI
@@ -35,7 +34,7 @@ support: https://github.com/AykutSarac/jsoncrack.com/issues
 gallery:
   - https://raw.githubusercontent.com/AykutSarac/jsoncrack.com/main/apps/www/public/assets/editor.webp
   - https://raw.githubusercontent.com/AykutSarac/jsoncrack.com/main/apps/www/public/assets/diagram-dark.png
-releaseNotes: |
+releaseNotes: >-
   Initial release of JSON Crack for Umbrel.
   Uses community Docker image shokohsc/jsoncrack:latest.
 dependencies: []
