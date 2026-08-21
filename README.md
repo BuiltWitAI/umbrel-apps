@@ -21,7 +21,6 @@ This is a **community Umbrel App Store** where I collect and distribute all the 
 | <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-jsoncrack/icon.png" alt="JSON Crack" width="24"> | [JSON Crack](bwtai-jsoncrack) | Visualize JSON, YAML, XML, CSV into interactive graphs |
 | <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-microbin/icon.png" alt="Microbin" width="24"> | [Microbin](bwtai-microbin) | Lightweight pastebin & URL shortener |
 | <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-nextchat/icon.png" alt="NextChat" width="24"> | [NextChat](bwtai-nextchat) | Light and Fast AI Assistant with multi-model support |
-| <img src="https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-d9/icon.png" alt="d9" width="24"> | [d9](bwtai-d9) | Open-source fork of Directus 9 - headless CMS & API |
 
 ## How to Add This Store to Your Umbrel
 
