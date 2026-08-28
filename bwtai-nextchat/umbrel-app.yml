@@ -19,8 +19,16 @@ description: |
   - I18n: 20+ languages
   - One-click deploy with Docker
 developer: ChatGPTNextWeb
-submitter: BuiltWitAI
-submission: https://github.com/BuiltWitAI/umbrel-apps
+website: https://github.com/ChatGPTNextWeb/NextChat
+dependencies: []
 repo: https://github.com/ChatGPTNextWeb/NextChat
+support: https://github.com/ChatGPTNextWeb/NextChat/issues
 gallery:
   - https://github.com/user-attachments/assets/903482d4-3e87-4134-9af1-f2588fa90659
+releaseNotes: >-
+  Updated icon to ChatGPTNextWeb logo.
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
