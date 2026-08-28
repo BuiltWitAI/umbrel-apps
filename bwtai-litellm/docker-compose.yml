@@ -1,0 +1,51 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: bwtai-litellm_litellm_1
+      APP_PORT: 4000
+      PROXY_AUTH_ADD: "false"
+
+  litellm:
+    image: docker.litellm.ai/berriai/litellm:main-stable
+    restart: on-failure
+    ports:
+      - "4000:4000"
+    environment:
+      - DATABASE_URL=postgresql://llmproxy:changeme@db:5432/litellm
+      - STORE_MODEL_IN_DB=True
+    env_file:
+      - .env # Load local .env file (optional)
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    restart: on-failure
+    environment:
+      - POSTGRES_DB=litellm
+      - POSTGRES_USER=llmproxy
+      - POSTGRES_PASSWORD=changeme
+      - POSTGRES_ROOT_PASSWORD=changeme
+    volumes:
+      - ${APP_DATA_DIR}/data/db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "llmproxy"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  ## Optional: Prometheus for monitoring
+  prometheus:
+    image: prom/prometheus:latest
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/data/prometheus:/prometheus
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "9090:9090"
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--storage.tsdb.retention.time=15d"

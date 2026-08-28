@@ -1,0 +1,34 @@
+manifestVersion: 1
+id: bwtai-litellm
+name: LiteLLM
+tagline: Unified API gateway for 100+ LLMs
+category: developer
+version: "main-stable"
+port: 18510
+icon: https://raw.githubusercontent.com/BuiltWitAI/umbrel-apps/master/bwtai-litellm/icon.png
+description: |
+  LiteLLM is an open source AI Gateway that gives you a single, unified interface to call 100+ LLM providers — OpenAI, Anthropic, Gemini, Bedrock, Azure, and more — using the OpenAI format.
+
+  ### Features
+  - Unified API for 100+ LLMs (OpenAI, Anthropic, Gemini, etc.)
+  - Drop-in OpenAI compatibility - swap providers without rewriting code
+  - Virtual keys, spend tracking, and budget management
+  - Admin UI for managing models, keys, and configurations
+  - Load balancing, fallbacks, and guardrails
+  - Built-in logging and monitoring with Prometheus support
+  - Python SDK and OpenAI-compatible proxy server
+
+developer: BerriAI
+website: https://www.litellm.ai/
+dependencies: []
+repo: https://github.com/BerriAI/litellm
+support: https://github.com/BerriAI/litellm/issues
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: BuiltWitAI
+submission: https://github.com/BuiltWitAI/umbrel-apps
+releaseNotes: >-
+  Initial release of LiteLLM for Umbrel.
+  Based on LiteLLM main-stable (docker.litellm.ai/berriai/litellm:main-stable).
